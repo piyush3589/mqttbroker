@@ -32,20 +32,12 @@ This project includes several Dockerized services to support different functiona
 - **Description:** The publisher service sends sensor data to the MQTT broker.
 - **Build Context:** Uses Dockerfile.publisher for building.
 - **Depends On:** Depends on Mosquitto broker and Subscriber for initialization.
-- **Environment Variables:**
-  - `MQTT_BROKER_HOST`: Hostname for the Mosquitto broker container.
-  - `MQTT_BROKER_PORT`: MQTT broker port (1883).
-
+- 
 ### 5. Subscriber (`subscriber`)
 
 - **Description:** The subscriber service receives sensor data from the MQTT broker and stores it in MongoDB.
 - **Build Context:** Uses Dockerfile.subscriber for building.
 - **Depends On:** Depends on Mosquitto broker and MongoDB service for initialization.
-- **Environment Variables:**
-  - `MQTT_BROKER_HOST`: Hostname for the Mosquitto broker container.
-  - `MQTT_BROKER_PORT`: MQTT broker port (1883).
-  - `MONGODB_HOST`: Hostname for the MongoDB service container.
-  - `MONGODB_PORT`: MongoDB port (27017).
 
 ### 6. FastAPI App (`fastapi-app`)
 
@@ -53,10 +45,6 @@ This project includes several Dockerized services to support different functiona
 - **Build Context:** Uses Dockerfile.fastapi for building.
 - **Depends On:** Depends on MongoDB service for initialization.
 - **Ports:** Exposes FastAPI on port 8000.
-- **Environment Variables:**
-  - `MONGODB_HOST`: Hostname for the MongoDB service container.
-  - `MONGODB_PORT`: MongoDB port (27017).
-
 
 ## Getting Started
   - Before installing Docker Desktop, make sure you meet the following prerequisites:
