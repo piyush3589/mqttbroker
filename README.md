@@ -205,7 +205,7 @@ Here are some example API endpoints:
   - Description: Retrieves the last ten sensor readings of a specific type (e.g., 'temperature' or 'humidity').
   - example:http://localhost:8000/last_ten_sensor_readings?sensor_type=humidity
  
-![Include](external.md)
+![Include](design_choices.md)
 
 
 
