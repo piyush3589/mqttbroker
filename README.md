@@ -46,7 +46,7 @@ This project combines the power of MQTT, MongoDB, Redis, and FastAPI to create a
 
 
  
-![Include](design_choices.md)
+![Insights into Design choices](design_choices.md)
 
 
 
