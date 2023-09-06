@@ -41,7 +41,7 @@ To verify that Docker Desktop is installed and running correctly, open a termina
 
 ```bash
 docker --version
-```bash
+```
 
 ## Cloning the Project
 
