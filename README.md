@@ -63,6 +63,7 @@ If you prefer to clone using HTTPS, use the following steps:
 
    ```bash
    git clone https://github.com/piyush3589/mqttbroker.git
+   ```
 
 
 ## Building and Running the Project
@@ -79,24 +80,25 @@ Open your terminal or command prompt and navigate to the project directory. Use 
 
 ```bash
 cd path/to/your/project-directory
+```
 
 Replace path/to/your/project-directory with the actual path to the project folder on your machine.
 3. Build the Docker Containers
 
 Once you're in the project directory, use Docker Compose to build the project's containers. Run the following command:
 
-bash
-
+```bash
 docker-compose build
+```
 
 This command will build the Docker containers specified in the docker-compose.yml file. The build process may take some time, depending on your project's complexity.
 4. Start the Project
 
 After the build is complete, you can start the project with Docker Compose:
 
-bash
-
+```bash
 docker-compose up
+```
 
 This command will start all the services defined in the docker-compose.yml file. You should see logs indicating that your project is running.
 5. Access the Project
