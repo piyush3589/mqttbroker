@@ -4,7 +4,7 @@
 
 ## Table of Contents
 
-- [Getting Started]
+- Getting Started
   - Before installing Docker Desktop, make sure you meet the following prerequisites:
 
 - **Operating System:** Docker Desktop is available for Windows and macOS. Ensure your system is running a supported version.
@@ -43,6 +43,28 @@ To verify that Docker Desktop is installed and running correctly, open a termina
 
 ```bash
 docker --version
+
+## Cloning the Project
+
+Follow these steps to clone this project to your local machine:
+
+### Prerequisites
+
+Before you begin, ensure that you have Git installed on your computer. If Git is not already installed, you can download and install it from the [official Git website](https://git-scm.com/).
+
+### Cloning via HTTPS
+
+If you prefer to clone using HTTPS, use the following steps:
+
+1. Open your terminal or command prompt.
+
+2. Navigate to the directory where you want to store the project.
+
+3. Run the following command to clone the repository:
+
+   ```bash
+   git clone https://github.com/piyush3589/mqttbroker.git
+
 
 
 
