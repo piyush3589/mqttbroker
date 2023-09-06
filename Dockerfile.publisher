@@ -1,0 +1,14 @@
+# Use a base Python image
+FROM python:3.9
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the Python script for the publisher into the container
+COPY publisher.py .
+
+# Install any required Python packages
+RUN pip install paho-mqtt
+
+# Define the command to run the publisher script
+CMD ["python", "publisher.py"]

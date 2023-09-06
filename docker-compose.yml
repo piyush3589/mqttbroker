@@ -1,0 +1,69 @@
+version: '3'
+services:
+  # service for mongodb
+  mongodb-service:
+    image: mongo:latest
+    container_name: unique-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ""
+      MONGO_INITDB_ROOT_PASSWORD: ""
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongodb-data:/data/db
+      - ./mongodb-config/mongod.conf:/etc/mongod.conf
+    command: [ "mongod", "--config", "/etc/mongod.conf" ] #for no authentication this line  is used
+  # mosquitto broker
+  mosquitto-broker:
+    image: toke/mosquitto
+    container_name: unique-mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001" # WebSockets port
+  #redis
+  redis:
+    image: redis:latest
+    container_name: unique-redis
+    ports:
+      - "6379:6379"
+  # publisher
+  publisher:
+    build:
+      context: .  # Use the current directory as the build context
+      dockerfile: Dockerfile.publisher  # Dockerfile for the publisher service
+    container_name: my-publisher  # Name for the publisher container
+    depends_on:
+      - mosquitto-broker # Wait for the Mosquitto broker to be ready
+      - subscriber # Wait for the subscriber to be ready
+    environment:
+      MQTT_BROKER_HOST: mosquitto-broker  # Hostname for the Mosquitto broker container
+      MQTT_BROKER_PORT: 1883  # MQTT broker port
+  #subscriber
+  subscriber:
+    build:
+      context: .  # Use the current directory as the build context
+      dockerfile: Dockerfile.subscriber  # Dockerfile for the subscriber service
+    container_name: my-subscriber  # Name for the subscriber container
+    depends_on:
+      - mosquitto-broker  # Wait for the Mosquitto broker to be ready
+      - mongodb-service  # Wait for the MongoDB service to be ready
+    environment:
+      MQTT_BROKER_HOST: mosquitto-broker  # Hostname for the Mosquitto broker container
+      MQTT_BROKER_PORT: 1883  # MQTT broker port
+      MONGODB_HOST: mongodb-service  # Hostname for the MongoDB service container
+      MONGODB_PORT: 27017  # MongoDB port
+  #fastapi service
+  fastapi-app:
+    build:
+      context: .  # Use the current directory as the build context
+      dockerfile: Dockerfile.fastapi  # Dockerfile for the FastAPI service
+    container_name: my-fastapi-app  # Name for the FastAPI container
+    depends_on:
+      - mongodb-service  # Wait for the MongoDB service to be ready
+    ports:
+      - "8000:8000"  # Map FastAPI port to host port
+    environment:
+      MONGODB_HOST: mongodb-service  # Hostname for the MongoDB service container
+      MONGODB_PORT: 27017
+
+
