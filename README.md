@@ -1,6 +1,6 @@
 # Mosquitto Broker 
 
- The purpose of this project is to simulate the behaviour of sensors, monitor their readings, and provide APIs to retrieve data based on specific criteria.
+ The purpose of this project is to simulate the behaviour of sensors, monitor their readings, and provide APIs to retrieve data based on specific criteria also it uses mongodb database for storage and redis
 
 ## Overview of Services Used in Docker Compose File
 
@@ -47,7 +47,7 @@ This project includes several Dockerized services to support different functiona
 - **Ports:** Exposes FastAPI on port 8000.
 
 ## Getting Started
-  - Before installing Docker Desktop, make sure you meet the following prerequisites:
+- Before installing Docker Desktop, make sure you meet the following prerequisites:
 
 - **Operating System:** Docker Desktop is available for Windows and macOS. Ensure your system is running a supported version.
 
