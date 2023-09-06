@@ -148,19 +148,21 @@ This command will start all the services defined in the docker-compose.yml file.
 ### 5. Access the Project
 All services will get started and then you can access fast api at 
 ```bash
-[docker-compose up](http://localhost:8000)http://localhost:8000
+http://localhost:8000
 ```
 Here are some example API endpoints:
 
 - **List All Sensors:**
-  - URL: `/sensors`
+  - URL: `/sensor_readings`
   - Method: GET
-  - Description: Retrieves a list of all sensors.
+  - Description: An endpoint that allows users to fetch sensor readings by specifying a start and end    range.
+  - example:http://localhost:8000/sensor_readings/?start_range=2023-09-05T00:00:00&end_range=2023-09-05T23:59:00
 
 - **Get Sensor Readings by Type:**
-  - URL: `/sensors/{sensor_type}`
+  - URL: `/last_ten_sensor_readings`
   - Method: GET
   - Description: Retrieves the last ten sensor readings of a specific type (e.g., 'temperature' or 'humidity').
+  - example:http://localhost:8000/last_ten_sensor_readings?sensor_type=humidity
 
 
 
