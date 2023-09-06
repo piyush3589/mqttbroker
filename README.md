@@ -4,8 +4,7 @@
 
 ## Table of Contents
 
-- [Getting Started](#getting-started)
-  - [Prerequisites]
+- [Getting Started]
   - Before installing Docker Desktop, make sure you meet the following prerequisites:
 
 - [ ] **Operating System:** Docker Desktop is available for Windows and macOS. Ensure your system is running a supported version.
