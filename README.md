@@ -163,8 +163,6 @@ Here are some example API endpoints:
 
 ![Overview of Services in Docker Compose File](overview.md)
 
-
- 
 ![Insights into Design choices](design_choices.md)
 
 
