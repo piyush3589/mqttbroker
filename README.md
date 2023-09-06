@@ -2,9 +2,7 @@
 
  The purpose of this project is to simulate the behaviour of sensors, monitor their readings, and provide APIs to retrieve data based on specific criteria.
 
-## Table of Contents
-
-- Getting Started
+## Getting Started
   - Before installing Docker Desktop, make sure you meet the following prerequisites:
 
 - **Operating System:** Docker Desktop is available for Windows and macOS. Ensure your system is running a supported version.
@@ -43,7 +41,7 @@ To verify that Docker Desktop is installed and running correctly, open a termina
 
 ```bash
 docker --version
-'''bash
+```bash
 
 ## Cloning the Project
 
