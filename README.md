@@ -2,7 +2,7 @@
 
  The purpose of this project is to simulate the behaviour of sensors, monitor their readings, and provide APIs to retrieve data based on specific criteria.
 
-## Services
+## Services Used in Docker Compose File
 
 This project includes several Dockerized services to support different functionalities:
 
