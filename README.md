@@ -87,7 +87,7 @@ This project includes several Dockerized services to support different functiona
 - **Depends On:** Depends on MongoDB service for initialization.
 - **Ports:** Exposes FastAPI on port 8000.
 
-## Getting Started
+##  Instructions for Getting Started
 - Before installing Docker Desktop, make sure you meet the following prerequisites:
 
 - **Operating System:** Docker Desktop is available for Windows and macOS. Ensure your system is running a supported version.
@@ -204,6 +204,8 @@ Here are some example API endpoints:
   - Method: GET
   - Description: Retrieves the last ten sensor readings of a specific type (e.g., 'temperature' or 'humidity').
   - example:http://localhost:8000/last_ten_sensor_readings?sensor_type=humidity
+ 
+![Include](external.md)
 
 
 
