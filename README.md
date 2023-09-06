@@ -102,6 +102,8 @@ docker-compose up
 
 This command will start all the services defined in the docker-compose.yml file. You should see logs indicating that your project is running.
 5. Access the Project
+All services will get started and then you can access fast api
+
 
 
 
